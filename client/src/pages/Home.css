@@ -1,0 +1,8 @@
+.Populars {
+  background-color: "#151B1E";
+}
+
+.PopularRow {
+  display: flex;
+  justify-content: space-between;
+}
