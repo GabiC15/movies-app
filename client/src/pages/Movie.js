@@ -13,9 +13,6 @@ export default function Movie() {
     MoviesApi.getMovieDetail(315162).then(setMovie);
   }, []);
 
-  if (movie) {
-    console.log(movie);
-  }
   return (
     <>
       <MainLayout>
@@ -80,6 +77,25 @@ export default function Movie() {
             </div>
           </div>
         )}
+
+        <Container>
+          <Box className="CastContainer">
+            <h2>Reparto</h2>
+
+            <Box className="CastSlider">
+              {[0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map(() => (
+                <Box className="CastCard">
+                  <img
+                    src="https://image.tmdb.org/t/p/w500/734KLBKR2gpiTtPB4BtygfOuv9Q.jpg"
+                    alt="Cast"
+                  />
+                  <h4>Antonio Banderas</h4>
+                  <p>Puss in Boots</p>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </Container>
       </MainLayout>
     </>
   );
