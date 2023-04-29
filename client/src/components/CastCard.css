@@ -1,0 +1,18 @@
+.CastCard {
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  min-width: 9rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.CastCard img {
+  width: 9rem;
+}
+
+.CastCard h4 {
+  margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.CastCard p {
+  margin: 0 0.5rem 1.5rem 0.5rem;
+}

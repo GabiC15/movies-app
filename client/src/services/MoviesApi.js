@@ -10,11 +10,11 @@ export const MoviesApi = {
 
     return res.data;
   },
-  getLatestMovies: async function (page) {
-    console.log(page);
+  getLatestMovies: async function ({ page, genre }) {
     const res = await this.api.get("/latest", {
       params: {
         page,
+        genre,
       },
     });
 
@@ -23,6 +23,21 @@ export const MoviesApi = {
 
   getMovieDetail: async function (id) {
     const res = await this.api.get(`/detail/${id}`);
+
+    return res.data;
+  },
+  getMovieProviders: async function (id) {
+    const res = await this.api.get(`/providers/${id}`);
+
+    return res.data.results;
+  },
+  getMovieCredits: async function (id) {
+    const res = await this.api.get(`/credits/${id}`);
+
+    return res.data;
+  },
+  getMovieSimilars: async function (id) {
+    const res = await this.api.get(`/similars/${id}`);
 
     return res.data;
   },

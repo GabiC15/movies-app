@@ -3,13 +3,14 @@ import { Box, Rating } from "@mui/material";
 import moment from "moment";
 import { alpha } from "@mui/material/styles";
 
-export default function MovieCard({ movie }) {
+export default function MovieCard({ movie, onClick }) {
   let date = moment(movie.release_date, "YYYY-MM-DD").locale("es").fromNow();
   date = date[0].toUpperCase() + date.slice(1);
 
   return (
     <>
       <Box
+        onClick={onClick}
         sx={{
           display: "flex",
           flexDirection: "column",

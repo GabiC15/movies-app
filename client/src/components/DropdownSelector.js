@@ -19,52 +19,41 @@ const MenuProps = {
   },
 };
 
-const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
-];
-
-function getStyles(name, personName, theme) {
-  return {
-    fontWeight:
-      personName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
-
-export default function DropdownSelector() {
+export default function DropdownSelector({ items, value, setValue }) {
   const theme = useTheme();
-  const [personName, setPersonName] = React.useState("");
+  const itemsIds = items.map((i) => i.id);
+  const itemsValues = items.map((i) => i.name);
 
   const handleChange = ({ target }) => {
-    setPersonName(target.value);
+    setValue(items[itemsValues.indexOf(target.value)].id);
   };
+
+  function getStyles(theme) {
+    return {
+      fontWeight:
+        itemsIds.indexOf(value) === -1
+          ? theme.typography.fontWeightRegular
+          : theme.typography.fontWeightMedium,
+    };
+  }
+
   return (
     <>
       <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
-        {personName.length === 0 && (
+        {
           <InputLabel
             sx={{ color: "#ffffff" }}
             id="demo-multiple-name-label"
             shrink={false}
           >
-            Name
+            {value ? "" : "Genero"}
           </InputLabel>
-        )}
+        }
         <Select
           notched={false}
           labelId="demo-multiple-name-label"
           id="demo-multiple-name"
-          value={personName}
+          value={items[itemsIds.indexOf(value)]?.name ?? ""}
           onChange={handleChange}
           MenuProps={MenuProps}
           sx={{
@@ -79,13 +68,13 @@ export default function DropdownSelector() {
             },
           }}
         >
-          {names.map((name) => (
+          {items.map((genre) => (
             <MenuItem
-              key={name}
-              value={name}
-              style={getStyles(name, personName, theme)}
+              key={genre.id}
+              value={genre.name}
+              style={getStyles(theme)}
             >
-              {name}
+              {genre.name}
             </MenuItem>
           ))}
         </Select>

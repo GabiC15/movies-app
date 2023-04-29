@@ -1,13 +1,13 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-export default function PopularCard({ movie }) {
+export default function PopularCard({ movie, onClick }) {
   return (
     <>
       <Box
+        onClick={onClick}
         sx={{
-          marginTop: "1rem",
-          marginBottom: "1rem",
+          margin: "1rem 0",
           transition: "all 125ms",
           borderRadius: "5px",
           "&:hover": {

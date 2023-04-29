@@ -1,3 +1,7 @@
+h2 {
+  font-weight: 600;
+}
+
 .Header {
   background-color: rgba(52, 73, 95, 0.5);
   height: 30rem;
@@ -68,32 +72,13 @@
   padding-bottom: 2rem;
 }
 
-.CastContainer h2 {
-  font-weight: 600;
-}
-
-.CastContainer .CastSlider {
+.Slider {
   overflow-x: scroll;
   display: flex;
-  gap: 1rem;
+  column-gap: 1rem;
   padding-bottom: 1rem;
 }
 
-.CastContainer .CastCard {
-  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
-  min-width: 9rem;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.CastContainer .CastCard img {
-  width: 9rem;
-}
-
-.CastContainer .CastCard h4 {
-  margin: .5rem .5rem 0 .5rem
-}
-
-.CastContainer .CastCard p {
-  margin: 0 .5rem 1.5rem .5rem
+.SimilarContainer h2 {
+  margin-bottom: 0.4rem;
 }
