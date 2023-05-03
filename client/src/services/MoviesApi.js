@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const MoviesApi = {
   api: axios.create({
-    baseURL: "http://localhost:3001/api",
+    baseURL: `http://localhost:${process.env.PORT}/api`,
   }),
 
   getPopularMovies: async function () {
