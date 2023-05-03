@@ -10,7 +10,7 @@ import { getCreditsRouter } from "./routes/get-movie-credits";
 import { getSimilarsRouter } from "./routes/get-movie-similars";
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT;
 
 app.use(json());
 app.use(cors());
