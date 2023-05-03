@@ -15,6 +15,8 @@ const port = 3001;
 app.use(json());
 app.use(cors());
 
+app.use(express.static(__dirname + "./../client/build"));
+
 app.use(getPopularRouter);
 app.use(getLatestRouter);
 app.use(getMovieDetailRouter);
