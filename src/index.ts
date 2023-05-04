@@ -11,7 +11,6 @@ import { getSimilarsRouter } from "./routes/get-movie-similars";
 
 const app = express();
 const port = process.env.PORT;
-process.env.REACT_APP_PORT = port;
 
 app.use(json());
 app.use(cors());
